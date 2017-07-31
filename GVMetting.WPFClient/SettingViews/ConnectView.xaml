@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="GVMetting.WPFClient.SettingViews.ConnectView"
+             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <StackPanel>
+    <TextBox x:Name="txtip" Text="{Binding IP,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+             controls:TextBoxHelper.ClearTextButton="True"
+             controls:TextBoxHelper.UseFloatingWatermark="True"
+             controls:TextBoxHelper.Watermark="输入服务端IP地址"
+             Margin="{StaticResource ControlMargin}"/>
+    <TextBox x:Name="txtport" Text="{Binding Port,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+             controls:TextBoxHelper.ClearTextButton="True"
+             controls:TextBoxHelper.UseFloatingWatermark="True"
+             controls:TextBoxHelper.Watermark="输入服务端端口号（默认123456）"
+             Margin="{StaticResource ControlMargin}"/>
+  </StackPanel>
+</UserControl>

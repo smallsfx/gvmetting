@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GVMetting.WPFClient", "GVMetting.WPFClient\GVMetting.WPFClient.csproj", "{893A979A-C31A-4EB0-89DE-8E89FCE4EC36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GVMetting.CommonServer", "GVMetting.CommonServer\GVMetting.CommonServer.csproj", "{3CDB9322-0A76-4E4F-8937-BBA108561757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GVMetting.Core", "GVMetting.Core\GVMetting.Core.csproj", "{F6021BAF-43A5-4598-9CD7-162889A86687}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GVMetting.Media", "GVMetting.Media\GVMetting.Media.csproj", "{9BE72B2A-1FC1-47A3-A124-1E7194FFA716}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{893A979A-C31A-4EB0-89DE-8E89FCE4EC36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{893A979A-C31A-4EB0-89DE-8E89FCE4EC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{893A979A-C31A-4EB0-89DE-8E89FCE4EC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{893A979A-C31A-4EB0-89DE-8E89FCE4EC36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CDB9322-0A76-4E4F-8937-BBA108561757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CDB9322-0A76-4E4F-8937-BBA108561757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CDB9322-0A76-4E4F-8937-BBA108561757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CDB9322-0A76-4E4F-8937-BBA108561757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6021BAF-43A5-4598-9CD7-162889A86687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6021BAF-43A5-4598-9CD7-162889A86687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6021BAF-43A5-4598-9CD7-162889A86687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6021BAF-43A5-4598-9CD7-162889A86687}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE72B2A-1FC1-47A3-A124-1E7194FFA716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE72B2A-1FC1-47A3-A124-1E7194FFA716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE72B2A-1FC1-47A3-A124-1E7194FFA716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BE72B2A-1FC1-47A3-A124-1E7194FFA716}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

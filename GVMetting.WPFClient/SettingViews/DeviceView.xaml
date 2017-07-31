@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="GVMetting.WPFClient.SettingViews.DeviceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Resources/Icons.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatSlider.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Label Content="视频设备" Style="{DynamicResource DescriptionHeaderStyle}"/>
+      <Button Grid.Column="1" Width="36" Height="36" Command="{Binding RefreshVideoDevices}" Style="{DynamicResource MetroCircleButtonStyle}">
+        <Rectangle Width="18" Height="18"
+                   Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+          <Rectangle.OpacityMask>
+            <VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_refresh}" />
+          </Rectangle.OpacityMask>
+        </Rectangle>
+      </Button>
+
+      <Button Grid.Column="2" Width="36" Height="36" Command="{Binding TestVideoDevice}" Style="{DynamicResource MetroCircleButtonStyle}">
+        <Rectangle Width="18" Height="18"
+                   Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+          <Rectangle.OpacityMask>
+            <VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_connect}" />
+          </Rectangle.OpacityMask>
+        </Rectangle>
+      </Button>
+    </Grid>
+    <ListBox ItemsSource="{Binding VideoDevices}" DisplayMemberPath="Name"
+           SelectedItem="{Binding SelectedVideoDevice,Mode=TwoWay}"
+           Style="{StaticResource VirtualisedMetroListBox}">
+    </ListBox>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Label Content="音频设备" Style="{DynamicResource DescriptionHeaderStyle}"/>
+      <Button Grid.Column="1" Width="36" Height="36" Command="{Binding RefreshAudioDevice}" Style="{DynamicResource MetroCircleButtonStyle}">
+        <Rectangle Width="18" Height="18"
+                   Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+          <Rectangle.OpacityMask>
+            <VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_refresh}" />
+          </Rectangle.OpacityMask>
+        </Rectangle>
+      </Button>
+      <Button Grid.Column="2" Width="36" Height="36" Command="{Binding TestAudioDevice}" Style="{DynamicResource MetroCircleButtonStyle}">
+        <Rectangle Width="18" Height="18"
+                   Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+          <Rectangle.OpacityMask>
+            <VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_connect}" />
+          </Rectangle.OpacityMask>
+        </Rectangle>
+      </Button>
+    </Grid>
+    <ListBox ItemsSource="{Binding AudioDevices}" DisplayMemberPath="Name"
+           SelectedItem="{Binding SelectedAudioDevice,Mode=TwoWay}"
+           Style="{StaticResource VirtualisedMetroListBox}">
+    </ListBox>
+    <Label Content="设备测试" Style="{DynamicResource DescriptionHeaderStyle}"/>
+    <Image x:Name="image" Stretch="Fill"/>
+  </StackPanel>
+</UserControl>

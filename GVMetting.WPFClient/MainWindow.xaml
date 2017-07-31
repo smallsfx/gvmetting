@@ -1,0 +1,131 @@
+﻿<controls:MetroWindow x:Class="GVMetting.WPFClient.MainWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:local="clr-namespace:GVMetting.WPFClient"
+      Title="nvlbs 视频会议（WPF）" Height="600" Width="800"
+      GlowBrush="{DynamicResource AccentColorBrush}"
+      NonActiveGlowBrush="#CDFF0000"
+      ShowIconOnTitleBar="True" ShowTitleBar="True"
+      WindowStartupLocation="CenterScreen" x:Name="window">
+  <controls:MetroWindow.RightWindowCommands>
+    <controls:WindowCommands>
+      <Button Content="加入会议" Click="OnJoinMetting"/>
+      <Button Content="设置" Click="OnSetting"/>
+      <!--<Button Content="测试" Click="OnTest"/>-->
+    </controls:WindowCommands>
+  </controls:MetroWindow.RightWindowCommands>
+  <controls:MetroWindow.LeftWindowCommands>
+    <controls:WindowCommands>
+    </controls:WindowCommands>
+  </controls:MetroWindow.LeftWindowCommands>
+  <controls:MetroContentControl>
+    <Grid>
+      <Grid.Resources>
+        <ResourceDictionary>
+          <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+          </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+      </Grid.Resources>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <TabControl AllowDrop="True" Grid.Row="1">
+        <TabItem Header="会议中心">
+          <Grid x:Name="LayoutRoot">
+            <Canvas x:Name="container"/>
+          </Grid>
+        </TabItem>
+        <TabItem Header="应用中心">
+          <TabItem.Resources>
+            <ResourceDictionary>
+              <Style x:Key="LargeTileStyle" TargetType="controls:Tile">
+                <Setter Property="Height" Value="125" />
+                <Setter Property="TitleFontSize" Value="14" />
+                <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+                <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
+                <Setter Property="Width" Value="300" />
+              </Style>
+              <Style x:Key="SmallTileStyle" TargetType="controls:Tile">
+                <Setter Property="Height" Value="125" />
+                <Setter Property="TitleFontSize" Value="10" />
+                <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+                <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
+                <Setter Property="Width" Value="147" />
+              </Style>
+            </ResourceDictionary>
+          </TabItem.Resources>
+          <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="430*" />
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+
+              <TextBlock Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Foreground="{DynamicResource BlackBrush}"
+                       FontFamily="Segoe UI"
+                       FontSize="30"
+                       FontWeight="Light"
+                       Text="科技以人为本" />
+
+              <WrapPanel Grid.Row="1" Grid.Column="1" Width="940" HorizontalAlignment="Left">
+                <controls:Tile Title="邮件"
+                               Margin="3"
+                               Style="{StaticResource LargeTileStyle}"
+                               Background="Teal"
+                               controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}"
+                               >
+                </controls:Tile>
+                <controls:Tile Title="会议纪要"
+                               Margin="3"
+                               Style="{StaticResource LargeTileStyle}"
+                               controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}">
+                </controls:Tile>
+                <controls:Tile Title="Finance" Style="{StaticResource LargeTileStyle}" Background="DimGray"/>
+                <controls:Tile Title="People" Style="{StaticResource LargeTileStyle}" Background="#D2691E"/>
+                <controls:Tile Title="Count"
+                               TitleFontSize="16"
+                               Count="28"
+                               CountFontSize="42"
+                               Style="{StaticResource SmallTileStyle}"
+                               Background="#FF842D"
+                               IsEnabled="False" />
+                <controls:Tile Title="Weather" Style="{StaticResource SmallTileStyle}" Background="#1E90FF">
+                </controls:Tile>
+                <controls:Tile Title="Store" Style="{StaticResource LargeTileStyle}" Background="Green">
+                </controls:Tile>
+              </WrapPanel>
+            </Grid>
+          </ScrollViewer>
+        </TabItem>
+      </TabControl>
+      <StatusBar Grid.Row="2">
+        <StatusBarItem Content="{Binding Title,ElementName=window}"/>
+        <Separator Style="{StaticResource MetroStatusBarSeparator}" />
+        <StatusBarItem>本机IP地址:</StatusBarItem>
+        <StatusBarItem x:Name="barlocalIP">xxxxxxxx</StatusBarItem>
+        <Separator Style="{StaticResource MetroStatusBarSeparator}" />
+        <StatusBarItem>连接状态：</StatusBarItem>
+        <StatusBarItem x:Name="barserverState">已连接</StatusBarItem>
+        <Separator Style="{StaticResource MetroStatusBarSeparator}" />
+        <StatusBarItem>会议人数：</StatusBarItem>
+        <StatusBarItem x:Name="barPersonCount">1000人</StatusBarItem>
+      </StatusBar>
+    </Grid>
+  </controls:MetroContentControl>
+  <controls:MetroWindow.Flyouts>
+    <controls:FlyoutsControl x:Name="flyoutsControl">
+      <local:SettingFlyout x:Name="settingsFlyout"/>
+    </controls:FlyoutsControl>
+  </controls:MetroWindow.Flyouts>
+</controls:MetroWindow>  

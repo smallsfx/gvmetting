@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="GVMetting.WPFClient.SettingViews.ThemeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <StackPanel>
+    <ListBox ItemsSource="{Binding AppThemes, Mode=OneWay}"
+             SelectedItem="{Binding SelectedTheme,Mode=TwoWay}"
+             Background="Transparent" BorderThickness="0">
+      <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+          <WrapPanel Width="290"/>
+        </ItemsPanelTemplate>
+      </ListBox.ItemsPanel>
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Rectangle Height="36" Width="36" Margin="0,4,4,4"
+                     Fill="{Binding ColorBrush, Mode=OneWay}"
+                     Stroke="{Binding BorderColorBrush, Mode=OneWay}"
+                     StrokeThickness="2"/>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+    <ListBox ItemsSource="{Binding AccentColors, Mode=OneWay}"
+             SelectedItem="{Binding SelectedColor,Mode=TwoWay}"
+             Background="Transparent" BorderThickness="0">
+      <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+          <WrapPanel Width="290"/>
+        </ItemsPanelTemplate>
+      </ListBox.ItemsPanel>
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Rectangle Height="36" Width="36" Margin="0,4,4,4"
+                     Fill="{Binding ColorBrush, Mode=OneWay}"/>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+  </StackPanel>
+</UserControl>
